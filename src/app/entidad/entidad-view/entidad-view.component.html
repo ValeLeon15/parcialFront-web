@@ -1,1 +1,23 @@
-<p>entidad-view works!</p>
+<div class="container">
+    <h1>Ver el arrendador</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Eliminar arrendador</th>
+                <th>Editar arrendador</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{entidad.id}}</td>
+                <td>{{entidad.nombre}}</td>
+                
+                <td><a href="#" (click)="borrarEntidad(entidad.id); $event.preventDefault()">Eliminar</a></td>
+                <td><a [routerLink]="['/entidad/edit', entidad.id]">Editar</a></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>
