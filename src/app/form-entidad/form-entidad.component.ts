@@ -35,7 +35,7 @@ export class FormEntidadComponent {
     );
   }
     
-  updateEntidad() {
+  actualizarEntidad() {
     console.log('Entidad a actualizar', this.entidad);
     this.entidadService.actualizarEntidad(this.entidad).subscribe(
       response => {

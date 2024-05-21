@@ -9,14 +9,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let entidad of entidad">
+            <tr *ngFor="let entidad of entidades">
                 <td>{{entidad.id}}</td>
                 <td>{{entidad.nombre}}</td>
-                <td><a [routerLink]="['/arrendador/view', entidad.id]">Ver</a></td>
+                <td><a [routerLink]="['/entidad/view', entidad.id]">Ver</a></td>
             </tr>
         </tbody>
     </table>
    
 </div>
-<a [routerLink]="['/arrendador/create']">Crear cuenta arrendador</a>
+<a [routerLink]="['/entidad/create']">Crear entidad</a>
 

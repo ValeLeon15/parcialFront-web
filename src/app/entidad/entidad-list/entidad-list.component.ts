@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EntidadService } from '../../services/entidad.service';
 import { Entidad } from '../../model/entidad';
@@ -8,8 +8,8 @@ import { Entidad } from '../../model/entidad';
   templateUrl: './entidad-list.component.html',
   styleUrl: './entidad-list.component.css'
 })
-export class EntidadListComponent {
-  entidad: Entidad[] = [];
+export class EntidadListComponent implements OnInit{
+  entidades: Entidad[] = [];
 
   constructor(
     private entidadService: EntidadService,
@@ -19,7 +19,7 @@ export class EntidadListComponent {
   ngOnInit(): void {
     this.entidadService
       .listarEntidades()
-      .subscribe((entidad) => (this.entidad = entidad));
-    console.log(this.entidad);
+      .subscribe((entidades) => (this.entidades = entidades));
+    console.log(this.entidades);
   }
 }

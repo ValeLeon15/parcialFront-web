@@ -8,7 +8,7 @@ describe('EntidadCreateComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EntidadCreateComponent]
+      declarations: [EntidadCreateComponent]
     })
     .compileComponents();
     

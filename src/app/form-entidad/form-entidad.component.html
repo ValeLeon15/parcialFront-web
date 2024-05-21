@@ -4,11 +4,8 @@
 
     <label for="nombre">Nombre:</label><br>
     <input type="text" id="nombre" name="nombre" placeholder="Nombre" required [(ngModel)]="entidad.nombre"><br><br>
-    <div *ngIf="entidad.nombre.length > 4">
-      <p class = "error">error es mayor a 4</p>
-    </div>
-
-    
+    <input *ngIf="entidad.id === 0" type="submit" value="Crear" (click)="crearEntidad()">
+        <input *ngIf="entidad.id !== 0" type="submit" value="Actualizar" (click)="actualizarEntidad()">
   </form>
 </div>
   
