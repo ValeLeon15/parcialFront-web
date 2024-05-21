@@ -1,18 +1,18 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { EntidadService } from '../../services/entidad.service';
+import { CelularService } from '../../services/celular.service';
+import { Celular } from '../../model/celular';
 import { Router } from '@angular/router';
-import { Entidad } from '../../model/entidad';
 
 @Component({
-  selector: 'app-entidad-edit',
-  templateUrl: './entidad-edit.component.html',
-  styleUrl: './entidad-edit.component.css'
+  selector: 'app-celular-edit',
+  templateUrl: './celular-edit.component.html',
+  styleUrl: './celular-edit.component.css'
 })
-export class EntidadEditComponent {
+export class CelularEditComponent {
   esCrear: boolean = false;
-  entidad!: Entidad;
+  celular!: Celular;
   constructor(
-    private entidadService: EntidadService,
+    private celularService: CelularService,
     private router: Router
   ) {}
   ngOnChanges(changes: SimpleChanges): void {
@@ -22,9 +22,9 @@ export class EntidadEditComponent {
         userId = changes[i].currentValue;
         if(userId!=0){
           console.log("entra")
-          this.entidadService.obtenerEntidadPorId(userId).subscribe((data: Entidad) => {
-            this.entidad = data;
-            console.log("el entidad es", this.entidad)
+          this.celularService.obtenerCelularPorId(userId).subscribe((data: Celular) => {
+            this.celular = data;
+            console.log("el celular es", this.celular)
           },
           error => {
             console.error('Error al cargar el entidad:', error);
@@ -38,4 +38,5 @@ export class EntidadEditComponent {
   set id(id: number) {
     console.log(id)
   }
+
 }

@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>Ver el celular</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Marca</th>
+                <th>Serial</th>
+                <th>Fecha de Compra</th>
+                <th>Año de Lanzamiento</th>
+                <th>Precio</th>
+                <th>Sistema Operativo</th>
+                <th>Gama</th>
+                <th>Eliminar celular</th>
+                <th>Editar celular</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{celular.id}}</td>
+                <td>{{celular.marca}}</td>
+                <td>{{celular.serial}}</td>
+                <td>{{celular.fechaCompra}}</td>
+                <td>{{celular.anioLanzamiento}}</td>
+                <td>{{celular.precio}}</td>
+                <td>{{celular.sistemaOperativo}}</td>
+                <td>{{celular.gama}}</td> 
+                <td><a href="#" (click)="borrarCelular(celular.id); $event.preventDefault()">Eliminar</a></td>
+                <td><a [routerLink]="['/celular/edit', celular.id]">Editar</a></td>
+            </tr>
+        </tbody>
+    </table>    
+</div>

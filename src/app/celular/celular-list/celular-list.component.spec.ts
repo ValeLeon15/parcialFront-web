@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntidadCreateComponent } from './entidad-create.component';
+import { CelularListComponent } from './celular-list.component';
 
-describe('EntidadCreateComponent', () => {
-  let component: EntidadCreateComponent;
-  let fixture: ComponentFixture<EntidadCreateComponent>;
+describe('CelularListComponent', () => {
+  let component: CelularListComponent;
+  let fixture: ComponentFixture<CelularListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EntidadCreateComponent]
+      declarations: [CelularListComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(EntidadCreateComponent);
+    fixture = TestBed.createComponent(CelularListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,10 +2,33 @@
 <div class="container">
 <form action="/submit-your-form-handler" method="POST">
 
-    <label for="nombre">Nombre:</label><br>
-    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required [(ngModel)]="entidad.nombre"><br><br>
-    <input *ngIf="entidad.id === 0" type="submit" value="Crear" (click)="crearEntidad()">
-        <input *ngIf="entidad.id !== 0" type="submit" value="Actualizar" (click)="actualizarEntidad()">
+    <label for="marca">Marca:</label><br>
+    <input type="text" id="marca" name="marca" placeholder="Marca" required [(ngModel)]="celular.marca"><br><br>
+    <label for="modelo">Serial:</label><br>
+    <input type="text" id="serial" name="serial" placeholder="Serial" required [(ngModel)]="celular.serial"><br><br>
+    <label for="fechaCompra">Fecha de Compra:</label>
+    <input type="date" id="fechaCompra" name="fechaCompra" required [(ngModel)]="celular.fechaCompra"><br>
+    <label for="anioLanzamiento">Año de Lanzamiento:</label>
+    <input type="number" id="anioLanzamiento" name="anioLanzamiento" required [(ngModel)]="celular.anioLanzamiento"><br>
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" name="precio" required [(ngModel)]="celular.precio"><br>
+    
+    <label for="sistemaOperativo">Sistema Operativo:</label>
+    <select id="sistemaOperativo" name="sistemaOperativo" required [(ngModel)]="celular.sistemaOperativo">
+        <option value="ANDROID">Android</option>
+        <option value="IOS">iOS</option>
+    </select><br>
+
+    <label for="gama">Gama:</label>
+    <select id="gama" name="gama" required [(ngModel)]="celular.gama">
+        <option value="ALTA">Alta</option>
+        <option value="MEDIA">Media</option>
+        <option value="BAJA">Baja</option>
+    </select><br>
+
+    <button type="submit">Enviar</button>
+    <input *ngIf="celular.id === 0" type="submit" value="Crear" (click)="crearCelular()">
+    <input *ngIf="celular.id !== 0" type="submit" value="Actualizar" (click)="actualizarCelular()">
   </form>
 </div>
   
